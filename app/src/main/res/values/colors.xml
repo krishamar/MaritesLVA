@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#81388A</color>
+    <color name="purple_500">#81388A</color>
+    <color name="purple_700">#81388A</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="background"> #44677D</color>
+    <color name= "chatbot"> #7AB9E1</color>
+    <color name= "user"> #5F90AF</color>
+    <color name="button"> #1B2932</color>
+</resources>

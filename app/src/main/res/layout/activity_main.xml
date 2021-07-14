@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    //used to show or display the messages
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above= "@id/containerMessages"
+        android:id="@+id/containerChats" />
+
+    // interface for composing a message
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/containerMessages">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_centerInParent="true"
+            android:hint="Compose Message"
+            android:layout_toLeftOf="@id/voiceButton"
+            android:textColorHint="@color/white"
+            android:id="@+id/composeMessage"
+            android:textColor="@color/white"
+            android:singleLine="true"
+            />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:fabCustomSize="40dp"
+            app:tint="@color/white"
+            app:backgroundTint="@color/button"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/voice_button"
+            android:id="@+id/voiceButton"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
