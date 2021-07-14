@@ -22,6 +22,8 @@
         android:id="@+id/containerMessages">
 
         <EditText
+            android:imeActionId="4"
+            android:imeOptions="actionSend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
