@@ -24,14 +24,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="8dp"
-            android:textSize="14dp"
-            android:text="Compose Message"
-            android:textColor="@color/white"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:id="@+id/marites"/>
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:text="Compose Message"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
 
     </LinearLayout>
 

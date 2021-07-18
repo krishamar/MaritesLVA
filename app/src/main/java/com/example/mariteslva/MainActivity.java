@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chaquo.python.PyObject;
+import com.chaquo.python.Python;
+import com.chaquo.python.android.AndroidPlatform;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -35,24 +38,33 @@ public class MainActivity extends AppCompatActivity {
         userMessageInput = findViewById(R.id.composeMessage);
         messageList = new ArrayList<>();
 
-        messageAdapter = new MessageAdapter(messageList);
+        messageAdapter = new MessageAdapter(messageList, this);
         messages.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         messages.setAdapter(messageAdapter);
 
+        /*
+        if(!Python.isStarted())
+            Python.start(new AndroidPlatform(this));
+        
+        Python py = Python.getInstance();
+        final PyObject prog = py.getModule("virtual_assistant");
+
+         */
         userMessageInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEND){
-                    ResponseMessage messages = new ResponseMessage(userMessageInput.getText().toString(),true);
+                    ResponseMessage messages = new ResponseMessage(userMessageInput.getText().toString(), false);
                     messageList.add(messages);
-
-                    ResponseMessage messages2 = new ResponseMessage(userMessageInput.getText().toString(),false);
+                    /*
+                    PyObject res = prog.callAttr("chat", userMessageInput.getText().toString());
+                    ResponseMessage bot = new ResponseMessage(res.toString(),true);
+                    messageList.add(bot);
+                    */
                     messageAdapter.notifyDataSetChanged();
                 }
-                return true;
+                return false;
             }
         });
-
-
     }
 }

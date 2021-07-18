@@ -26,6 +26,7 @@ public class  ResponseMessage {
         return marites;
     }
 
+
     public void setMarites(boolean marites) {
         this.marites = marites;
     }
