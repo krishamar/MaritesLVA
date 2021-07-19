@@ -11,10 +11,10 @@ android {
         applicationId "com.example.mariteslva"
 
         // src folder for python files
-        sourceSets {
-            main {
-                python {
-                    srcDirs = ["src/main/python"]
+        android {
+            sourceSets {
+                main {
+                    python.srcDir "src/main/python"
                 }
             }
         }
@@ -35,6 +35,9 @@ android {
 
             pip {
                 install "gtts"
+                install "SpeechRecognition"
+                install "ChatterBot==1.0.4"
+                install "pytz"
             }
         }
     }

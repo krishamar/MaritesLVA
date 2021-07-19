@@ -42,28 +42,26 @@ public class MainActivity extends AppCompatActivity {
         messages.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         messages.setAdapter(messageAdapter);
 
-        /*
+
         if(!Python.isStarted())
             Python.start(new AndroidPlatform(this));
         
         Python py = Python.getInstance();
         final PyObject prog = py.getModule("virtual_assistant");
 
-         */
         userMessageInput.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEND){
                     ResponseMessage messages = new ResponseMessage(userMessageInput.getText().toString(), false);
                     messageList.add(messages);
-                    /*
+
                     PyObject res = prog.callAttr("chat", userMessageInput.getText().toString());
                     ResponseMessage bot = new ResponseMessage(res.toString(),true);
                     messageList.add(bot);
-                    */
                     messageAdapter.notifyDataSetChanged();
                 }
-                return false;
+                return true;
             }
         });
     }
