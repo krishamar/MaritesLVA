@@ -22,7 +22,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.CustomVi
         TextView textView;
         public CustomViewHolder(View itemView){
             super(itemView);
-            textView = itemView.findViewById(R.id.input);
+            textView = itemView.findViewById(R.id.userInput);
             }
 
         }

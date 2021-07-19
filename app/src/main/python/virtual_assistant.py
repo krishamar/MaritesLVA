@@ -8,7 +8,6 @@ import datetime
 
 
 chat_bot = ChatBot(name='Marites', read_only=True, logic_adapters=['chatterbot.logic.MathematicalEvaluation',
-                                                                   'chatterbot.logic.TimeLogic',
                                                                    'chatterbot.logic.BestMatch'],
                    database_uri=None)
 trainer = ChatterBotCorpusTrainer(chat_bot)
@@ -92,5 +91,4 @@ def chat(query):
         webbrowser.open('www.messenger.com')
     else:
         res = chat_bot.get_response(query)
-        str(res)
         return res

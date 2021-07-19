@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     messageList.add(messages);
 
                     PyObject res = prog.callAttr("chat", userMessageInput.getText().toString());
+                    System.out.println(res.toString());
                     ResponseMessage bot = new ResponseMessage(res.toString(),true);
                     messageList.add(bot);
                     messageAdapter.notifyDataSetChanged();
