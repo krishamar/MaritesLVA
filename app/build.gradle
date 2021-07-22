@@ -34,10 +34,10 @@ android {
             buildPython "C:/Users/User/AppData/Local/Programs/Python/Python39/python.exe"
 
             pip {
-                install "gtts"
-                install "SpeechRecognition"
                 install "ChatterBot==1.0.4"
                 install "pytz"
+                install "pyowm"
+                install "beautifulsoup4"
             }
         }
     }
